@@ -1,0 +1,89 @@
+/*
+ *	StyleSheet.css
+ *  Author: Henry Caron, Sejal Dua, Ansgar Jordan, Abigail Radey
+ *  Purpose: Stylesheet for Comp20 Midterm Project
+ *	Date: 3/10/2020
+ */
+
+ * {
+ 	font-family: Helvetica;
+ }
+
+ nav {
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100vw;
+ 	height: 15vh;
+ 	background-color: #065A82;
+ }
+
+ ul {
+ 	margin: 0;
+ 	padding: 0;
+ 	display: flex;
+ }
+
+ li {
+ 	list-style-type: none;
+ 	margin: 0;
+ 	font-size: 10vh;
+ }
+
+ a {
+ 	text-decoration: none;
+ 	font-size: 5vh;
+ 	padding: 2vh;
+ 	color: #FFFFFF;
+ }
+
+ a:hover {
+ 	background-color: #1C7293;
+ }
+
+ h1 {
+ 	text-align:center;
+ 	color: white;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	border: 5px solid;
+
+ }
+
+ h2 {
+ 	text-align: center;
+ 	color: white;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	border: 2px solid white;
+ }
+
+ p {
+ 	text-align:left;
+ 	color: black;
+ 	font-size: x-large;
+ 	border: 2px solid white;
+ 	margin-left: 450px;
+ 	margin-right: 450px;
+ }
+
+ body{
+ 	background-size: 100%;
+ 	background-attachment: fixed;
+}
+ 
+ form {
+ 	text-align: center;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	color: white;
+ 	border: 2px solid white;
+ 	margin-left: 450px;
+ 	margin-right: 450px;
+ }
+
+ .button {
+ 	color:black;
+ 	font-size: 100px;
+ 	border: 5px solid black;
+ 	border-style:outset;
+
+
+ }
