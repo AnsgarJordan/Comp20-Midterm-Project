@@ -1,0 +1,11 @@
+7 Pages:
+  - Homepage (Abigail)
+  - About (Ansgar)
+  - Contact (Henry)
+  - Catalogue (Listings)
+  - Shopping Cart (Wait)
+  - Product Page (Wait)
+
+Workflow:
+  - Make content
+  - Design CSS (Abigail)
