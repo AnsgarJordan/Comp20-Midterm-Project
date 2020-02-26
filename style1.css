@@ -1,0 +1,54 @@
+/*
+ *	style.css
+ *  Author: Ansgar Jordan
+ *  Purpose: Stylesheet for Comp20 HW 6
+ *	Date: 2/12/2020
+ */
+
+ h1 {
+ 	text-align:center;
+ 	color: white;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	border: 5px solid;
+
+ }
+
+ h2 {
+ 	text-align: center;
+ 	color: white;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	border: 2px solid white;
+ }
+
+ p {
+ 	text-align:left;
+ 	color: black;
+ 	font-size: x-large;
+ 	border: 2px solid white;
+ 	margin-left: 450px;
+ 	margin-right: 450px;
+ }
+
+ body{
+ 	background-image: url('hotdoggie.jpg'); 
+ 	background-size: 100%;
+ 	background-attachment: fixed;
+}
+ 
+ form {
+ 	text-align: center;
+ 	background-color: rgba(51, 0, 0, 0.5);
+ 	color: white;
+ 	border: 2px solid white;
+ 	margin-left: 450px;
+ 	margin-right: 450px;
+ }
+
+ .button {
+ 	color:black;
+ 	font-size: 100px;
+ 	border: 5px solid black;
+ 	border-style:outset;
+
+
+ }
