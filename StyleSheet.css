@@ -71,6 +71,8 @@
 .hero {
 	background-image: url("homeimage.jpg");
 	background-size: cover;
+	padding: none;
+	margin: none;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -93,6 +95,11 @@ h2 {
 }
 
 footer {
+	background-color: #21295C;
+	/*margin: none; */
+	border: solid;
+	border-color: #21295C;
+	width: 100vw;
 
 }
 /*
