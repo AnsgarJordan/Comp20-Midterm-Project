@@ -22,7 +22,7 @@
  ul {
  	margin: 0;
  	padding: 0;
- 	display: flex;
+ 	/*display: flex;*/
  	/*text-align: center;*/
  }
 
@@ -33,6 +33,28 @@
  	padding-right: 2vw;
  	padding-bottom: 2vh;
  	font-size: 6vh;
+ 	/*display: flex;*/
+ }
+
+ .nav-container {
+ 	display:flex;
+ 	justify-content: space-between;
+ 	/*flex-direction: row;*/
+ }
+
+ .floatleft {
+ 	/*float: left;*/
+ }
+
+ .floatright {
+ 	/*float: right;*/
+ 	display:flex;
+ 	flex-direction: row;
+
+ }
+
+ .cart {
+ 	height: 6vh;
  }
 
  li:hover {
@@ -49,7 +71,8 @@
 .hero {
 	background-image: url("homeimage.jpg");
 	background-size: cover;
-	height: 200vh;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -57,7 +80,8 @@
 }
 
 .textgroup {
-	justify-content: center;
+	text-align: center;
+	/*justify-content: center;*/
 }
 
 h1 {
