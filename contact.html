@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch Website</title>
+	<link rel="stylesheet" href="StyleSheet.css">
+	<style type="text/css">
+	body {
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	.left, .middle, .right {display: inline-block; *display: inline; vertical-align: top; font-size: 12px; text-align: center; padding = 10px; margin = 10px}
+	.left {width: 25%; background-color: #f1f1f1; margin: 3%}
+	.middle {width: 25%; background-color: #f1f1f1;margin: 3%}
+	.right {width: 25%; background-color: #f1f1f1;margin: 3%}
+	input[type=text] {
+	  margins: auto;
+	  width: 50%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  box-sizing: border-box;
+	}
+	select {
+	  width: 100%;
+	  padding: 16px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  background-color: #f1f1f1;
+	}
+	
+	input[type=button], input[type=submit], input[type=reset] {
+	  background-color: cadetblue;
+	  border: none;
+	  color: black;
+	  padding: 8px 8px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit], input[type = reset] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit], input[type = reset] :hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  	border-radius: 5px;
+  	background-color: #f2f2f2;
+  	padding: 20px;
+  	margin: auto;
+	width: 50%;
+	margin-top: 20px;
+}
+	@media (max-width: 800)
+		{
+			html, h1 {font-size: 20;} 
+			html, .left, .middle, .right {display: block; *display: block; vertical-align: none;}
+		}
+</style>
+</head>
+
+<nav>
+	<ul>
+		<div class="nav-container" style="height: 60px; line-height: 60px; text-align: center; vertical-align: middle;">
+			<div class="floatleft">
+				<li><a href="index.html">Home</a></li>
+			</div>
+			<div class="floatright">
+				<li><a href="catalogue.html">Catalogue</a></li>
+				<li><a class = "active" href="contact.html">Contact</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
+			</div>
+		</div>
+	</ul>
+</nav>
+
+<body>
+	<div class="hero">
+		<div class="textgroup">
+			<h1>Contact Us</h1>
+		</div>
+	</div>
+	
+	<div class = "container">
+		<h2 style = "text-align: center">Please fill out this contact form with information:</h2>
+        <form method="get" action="">
+			Name <input type="text" name="name" /><br />
+			Phone Number <input type="text" name="name" /><br />
+			Email <input type="text" name="name" /><br />
+			<br /> What would you like to tell us? <textarea rows="6"></textarea> <br />
+			<input type="reset" value="Clear" />
+			<input type="submit" value="Submit"/>	
+		</form>
+	</div>
+	<div class = "content">
+		<h1 style = "text-align: center">Reach us at:</h1>
+		<div class = "left">
+				<img style = "padding: 10px, 0px" src="phone.png" height = "150px" alt=""/>
+	  <h2>Phone<br /></h2>
+	  <h3>(617) 627-6948</h3>
+		</div>
+	  <div class = "middle"> 
+				<img style = "padding: 10px, 0px" src="email.png" height = "150px" alt=""/>
+	  <h2>Email <br /></h2>
+	  <h3>jjjohnson@johnson.com</h3>	
+		</div>
+	  <div class = "right">
+				<img style = "padding: 10px" src="address.png" height = "150px" alt=""/>
+	  <h2>Address <br/> </h2>
+	  <h3> 512 Washington St Boston, MA 02111</h3>	  
+		  </div>
+	</div>
+</body>
+
+<footer>
+	<h2>IDK what to put here yet</h2>
+</footer>
+<html>
