@@ -111,8 +111,8 @@ var handData = [
 	}
 ];
 
-function drawClock(){ //create all the clock elements
-	updateData();	//draw them in the correct starting position
+function drawClock(){
+	updateData();
 	var svg = d3.select("body").append("svg")
 	    .attr("width", width)
 	    .attr("height", height);
@@ -121,7 +121,6 @@ function drawClock(){ //create all the clock elements
 		.attr('id','clock-face')
 		.attr('transform','translate(' + (clockRadius + margin) + ',' + (clockRadius + margin) + ')');
 
-	//add marks for seconds
 	face.selectAll('.second-tick')
 		.data(d3.range(0,60)).enter()
 			.append('line')
@@ -133,7 +132,6 @@ function drawClock(){ //create all the clock elements
 			.attr('transform',function(d){
 				return 'rotate(' + secondScale(d) + ')';
 			});
-	//and labels
 
 	face.selectAll('.second-label')
 		.data(d3.range(5,61,5))
@@ -151,7 +149,6 @@ function drawClock(){ //create all the clock elements
 				return d;
 			});
 
-	//... and hours
 	face.selectAll('.hour-tick')
 		.data(d3.range(0,12)).enter()
 			.append('line')

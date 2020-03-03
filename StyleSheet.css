@@ -16,7 +16,7 @@
  	left: 0;
  	width: 100vw;
  	height: 9vh;
- 	background-color: #065A82;
+	background-color: #065A82;
  }
 
  ul {
@@ -43,7 +43,7 @@
  }
 
  .floatleft {
- 	/*float: left;*/
+	display:flex;
  }
 
  .floatright {
