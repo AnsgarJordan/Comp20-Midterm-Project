@@ -17,6 +17,8 @@
  	width: 100vw;
  	height: 9vh;
 	background-color: #065A82;
+	font-size: 12pt;
+	overflow = none;
  }
 
  ul {
