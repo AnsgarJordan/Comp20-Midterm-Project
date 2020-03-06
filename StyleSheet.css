@@ -16,23 +16,53 @@
  	left: 0;
  	width: 100vw;
  	height: 9vh;
- 	background-color: #065A82;
+	background-color: #065A82;
+	text-size: 12pt;
+	overflow: hidden;
+	
  }
 
  ul {
  	margin: 0;
  	padding: 0;
- 	display: flex;
+ 	/*display: flex;*/
  	/*text-align: center;*/
  }
 
  li {
  	list-style-type: none;
- 	margin: 0;
  	padding-left: 2vw;
  	padding-right: 2vw;
- 	padding-bottom: 2vh;
- 	font-size: 6vh;
+ 	font-size: 4vh;
+ 	/*display: flex;*/
+ }
+
+ .nav-container {
+ 	display:flex;
+ 	justify-content: space-between;
+ 	
+ 	/*flex-direction: row;*/
+ }
+
+ .floatleft {
+	display:flex;
+ }
+
+ .floatright {
+ 	/*float: right;*/
+ 	display:flex;
+ 	flex-direction: row;
+
+ }
+
+ .cart {
+ 	height: 4vh;
+ 	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
  }
 
  li:hover {
@@ -41,15 +71,19 @@
 
  a {
  	text-decoration: none;
- 	font-size: 5vh;
- 	padding: 2vh;
+ 	font-size: 3vh;
+ 	padding: 2vh 2vh;
  	color: #FFFFFF;
+ 	float: left;
  }
 
 .hero {
 	background-image: url("homeimage.jpg");
 	background-size: cover;
-	height: 200vh;
+	padding: none;
+	margin: none;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -57,7 +91,8 @@
 }
 
 .textgroup {
-	justify-content: center;
+	text-align: center;
+	/*justify-content: center;*/
 }
 
 h1 {
@@ -68,7 +103,13 @@ h2 {
 	font-size: 10vh;
 }
 
+
 footer {
+	background-color: #21295C;
+	/*margin: none; */
+	border: solid;
+	border-color: #21295C;
+	width: 100vw;
 
 }
 /*
