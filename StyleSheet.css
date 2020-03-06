@@ -39,7 +39,11 @@
 
  .nav-container {
  	display:flex;
- 	justify-content: space-between;
+	justify-content: space-between;
+	height: 60px; 
+	line-height: 30px; 
+	text-align: center; 
+	vertical-align: middle;
  	
  	/*flex-direction: row;*/
  }
