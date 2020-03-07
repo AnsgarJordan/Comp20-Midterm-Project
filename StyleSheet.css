@@ -106,9 +106,13 @@ a {
 .textgroup {
 	text-align: center;
 	color: #065A82;
-	background-color: #fff;
+	background-color: rgb(183, 213, 226);
 	font-size: 30px;
-	/*justify-content: center;*/
+	padding-left: 2vw;
+	padding-right: 2vw;
+	padding-bottom: 2vh;
+	border-radius: 5px;
+	width: auto;
 }
 
 h1 {
