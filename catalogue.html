@@ -35,7 +35,7 @@
       font-size: 22px;
     }
     
-    .card button {
+    .button {
       border: none;
       outline: 0;
       padding: 12px;
@@ -44,10 +44,13 @@
       text-align: center;
       cursor: pointer;
       width: 100%;
-      font-size: 18px;
+	  font-size: 18px;
+	  margin: auto;
+    	  width: 90%;
+    	  margin-top: 20px;
     }
     
-    .card button:hover {
+    .button:hover {
       opacity: 0.7;
     }
 	</style>
@@ -120,7 +123,7 @@
                s += "<h3>" + watch_array[i].name + "</h3>";
                s += "<p class = 'price'> $" + watch_array[i].price + " (" + watch_array[i].size + "mm)</p>";
                s += "<p>" + watch_array[i].description + "</p>";
-               s += "<p><button> Add to Cart </button></p></div></br>"; 
+               s += "<p><a href='cart.html' class='button'>Add to Cart </a></p></div></br>"; 
             }
             console.log(s)
             document.writeln(s)
