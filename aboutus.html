@@ -9,6 +9,7 @@
 	<title>Watch Website</title>
 	<link rel="stylesheet" href="StyleSheet.css">
 	<style>
+	
 		p {
 			text-align:left;
 			padding-left: 50px;
@@ -28,8 +29,23 @@
 		}
 		img {
 			border-radius: 8px;
-			max-width: 100%;
-  			height: auto;
+  			padding: 10px;
+  			margin: auto;
+  			float: 
+		}
+		.container {
+		    overflow: auto;
+		    width: 60%;
+	
+		}
+		.left, .middle, .right {display: inline-block; *display: inline; vertical-align: top; font-size: 12px; text-align: center; padding = 10px; margin = 10px}
+    	.left {width: 25%; background-color: #f1f1f1; margin: 3%; border-radius: 5px;}
+    	.middle {width: 25%; background-color: #f1f1f1;margin: 3%;border-radius: 5px;}
+    	.right {width: 25%; background-color: #f1f1f1;margin: 3%;border-radius: 5px;}
+		@media (max-width: 800px)
+		{
+            html, .left, .middle, .right {display: block; *display: block; vertical-align: none; margin: auto; width: 75%}
+		    .container {width: 80%}
 		}
 		</style>
 </head>
@@ -44,7 +60,7 @@
 				<li><a href="catalogue.html">Catalogue</a></li>
 				<li><a href="contact.html">Contact</a></li>
 				<li><a class="active" href="aboutus.html">About Us</a></li>
-				<li><a href="terms.html">Terms</a></li>
+				<li><a href="terms.html">Terms & Conditions</a></li>
 				<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
 			</div>
 		</div>
@@ -52,24 +68,44 @@
 </nav>
 
 <body>
-	<br>
-	<h2 style="font-family: Arial; font-style: italic"> It all began in a garage... </h2>
-	<p style="font-size:x-large"> 
-		Johnson's Watches TM was founded by two brothers who believed that watches should be simple and sleek. 
-		In the summer of 1967, recent college grads Bill and Bob Johnson went on holiday to Genoa, Italy. During their trip, the purchased two handmade watches from a little known shop in the heart of the city. Upon returning home
-		to Buxton, OH, the brothers were so inspired by their watches that they decided to start a watchmaking business in their garage at home. From the first day, Bill and Bob followed a simple motto in designing their watches: simple, yet sleek. 
-		<br>
-		<br>
-		<img src="garage.jpg" title="Bill and Bobs Garage Workshop, (1969)" style="height:390px;width:550px; size:95%"> 
-		<img src="oldwatch.jpg" title="Bob Johnsons Watch from Genoa, Italy (1967)" style="height:390px;width:550px; size:95%">
-		<br>
-		<br>
+    <div class="textgroup" style="padding-top: 60px;">
+		<h3>About Us</h3>
+	</div>
 
-		Today, Johnson's watches is the premier manufacturer of quality, handmade timepieces. Our watches are sold worldwide and still follow the vision Bill and Bob had over sixty years ago.    
-		<br>
-		<br>
-		<img src="watch_man.jpg" title="Our Arabella Watch (2017 edition)"style="height:850px;width:1200px; size: 100%">
-	</p>
+	<div class = "container"> 
+        <p style = "margin: 10px; font-size:larger">
+		<h3 style = "text-align: center;">It all started in a garage...</h3>
+		Johnson's Watches was founded by two brothers who believed that watches 
+		should be simple and sleek. In the summer of 1967, recent college grads 
+		Bill and Bob Johnson went on holiday to Genoa, Italy. During their trip,
+		the purchased two handmade watches from a little known shop in the heart
+		of the city. Upon returning home to Buxton, OH, the brothers were so 
+		inspired by their watches that they decided to start a watchmaking 
+		business in their garage at home. From the first day, Bill and Bob 
+		followed a simple motto in designing their watches: simple, yet sleek. 
+        </p>
+        <img src="garage.jpg" title="Bill and Bobs Garage Workshop, (1969)" style = "width: 90%; margin: auto;">
+    </div>
+
+
+    <div>
+		<h3 style = "text-align: center"> Our Family</h3>
+		<div class = "left">
+				<img style = "padding: 10px, 0px" src="bald dude.jpg" width = "90%" alt=""/>
+	  <h3>John Johnson<br /></h3>
+	  <h4>CEO</h4>
+		</div>
+	  <div class = "middle"> 
+				<img style = "padding: 10px, 0px" src="bald dude 2.jpg" width = "90%" alt=""/>
+	  <h3>Jay Johnson <br /></h3>
+	  <h4>CTO</h4>	
+		</div>
+	  <div class = "right">
+				<img style = "padding: 10px" src="bald dude 3.jpg" width = "90%" alt=""/>
+	  <h3>Jimmy Johnson <br/> </h3>
+	  <h4> CFO</h4>	  
+		  </div>
+	</div>
 	
 </body>
 
