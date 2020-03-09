@@ -170,9 +170,10 @@ input:focus {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .image img {
-    width: 50%;
+  /* .image img {
+    height: 50%;
   }
+  .image, */
   .image,
   .quantity,
   .description {
