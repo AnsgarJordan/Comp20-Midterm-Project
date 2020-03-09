@@ -30,6 +30,7 @@
 	background-color: #065A82;
 	white-space: nowrap;
 	overflow: hidden;
+	z-index: 1;
  }
 
  ul {

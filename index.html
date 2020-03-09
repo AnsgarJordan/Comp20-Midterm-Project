@@ -5,6 +5,91 @@
 <head>
 	<title>Watch Website</title>
 	<link rel="stylesheet" href="StyleSheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script lang="javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script lang="javascript" src="js/d3.v4.min.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap');
+
+		body {
+			background: #fff;
+		}
+
+		#container {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+			margin: 0 auto;
+		}
+
+		svg{
+			stroke: #000;
+			font-family: "Quicksand", sans-serif;
+		}
+
+		img{
+			margin: 0 auto;
+		}
+
+		#rim {
+		fill: none;
+		stroke: #999;
+		stroke-width: 3px;
+		}
+
+		.second-hand{
+			stroke-width:3;
+
+		}
+
+		.minute-hand{
+			stroke-width:8;
+			stroke-linecap:round;
+		}
+
+		.hour-hand{
+			stroke-width:12;
+			stroke-linecap:round;
+		}
+
+		.hands-cover{
+			stroke-width:3;
+			fill:#fff;
+		}
+
+		.second-tick{
+			stroke-width:3;
+			fill:#000;	
+		}
+
+		.hour-tick{
+			stroke-width:8;
+		}
+
+		.second-label{
+			font-size: 12px;
+		}
+
+		.hour-label{
+			font-size: 24px;
+		}
+
+		@media screen and (max-width: 800px) {
+			#container {
+				visibility: hidden;
+				clear: both;
+				float: left;
+				margin: 10px auto 5px 20px;
+				width: 28%;
+				display: none;
+			}
+		}
+
+	</style>
 </head>
 
 <body>
@@ -18,7 +103,7 @@
 					<li><a href="catalogue.html">Catalogue</a></li>
 					<li><a href="contact.html">Contact</a></li>
 					<li><a href="aboutus.html">About Us</a></li>
-					<li><a href="terms.html">Terms & Conditions</a></li>
+					<li><a href="terms.html">Terms</a></li>
 					<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
 				</div>
 			</div>
@@ -31,6 +116,172 @@
 			<h2>Simple and Sleek</h2>
 		</div>
 	</div>
+	<div id="container"></div>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script>
+	
+			var radians = 0.0174532925, 
+				clockRadius = 150,
+				margin = 200,
+				width = (clockRadius+margin)*2,
+				height = (clockRadius+margin)*2,
+				width = width,
+				height = height,
+				hourHandLength = 2*clockRadius/3,
+				minuteHandLength = clockRadius,
+				secondHandLength = clockRadius-12,
+				secondHandBalance = 30,
+				secondTickStart = clockRadius;
+				secondTickLength = -10,
+				hourTickStart = clockRadius,
+				hourTickLength = -18
+				secondLabelRadius = clockRadius + 16;
+				secondLabelYOffset = 5
+				hourLabelRadius = clockRadius - 40
+				hourLabelYOffset = 7;
+	
+	
+			var hourScale = d3.scale.linear()
+				.range([0,330])
+				.domain([0,11]);
+	
+			var minuteScale = secondScale = d3.scale.linear()
+				.range([0,354])
+				.domain([0,59]);
+	
+			var handData = [
+				{
+					type:'hour',
+					value:0,
+					length:-hourHandLength,
+					scale:hourScale
+				},
+				{
+					type:'minute',
+					value:0,
+					length:-minuteHandLength,
+					scale:minuteScale
+				},
+				{
+					type:'second',
+					value:0,
+					length:-secondHandLength,
+					scale:secondScale,
+					balance:secondHandBalance
+				}
+			];
+	
+			function drawClock(){
+				updateData();
+
+				var svg = d3.select("#container").append("svg")
+					.attr("width", width)
+					.attr("height", height);
+	
+				var myimage = svg.append('image')
+					.attr('xlink:href', 'watchface/test3.png')
+					.attr('width', width)
+					.attr('height', width);
+	
+				var face = svg.append('g')
+					.attr('id','clock-face')
+					.attr('transform','translate(' + (clockRadius + margin) + ',' + (clockRadius + margin) + ')');
+	
+				face.selectAll('.second-tick')
+					.data(d3.range(0,60)).enter()
+						.append('line')
+						.attr('class', 'second-tick')
+						.attr('x1',0)
+						.attr('x2',0)
+						.attr('y1',secondTickStart)
+						.attr('y2',secondTickStart + secondTickLength)
+						.attr('transform',function(d){
+							return 'rotate(' + secondScale(d) + ')';
+						});
+	
+				face.selectAll('.hour-tick')
+					.data(d3.range(0,12)).enter()
+						.append('line')
+						.attr('class', 'hour-tick')
+						.attr('x1',0)
+						.attr('x2',0)
+						.attr('y1',hourTickStart)
+						.attr('y2',hourTickStart + hourTickLength)
+						.attr('transform',function(d){
+							return 'rotate(' + hourScale(d) + ')';
+						});
+	
+				face.selectAll('.hour-label')
+					.data(d3.range(1,13))
+						.enter()
+						.append('text')
+						.attr('class', 'hour-label')
+						.attr('text-anchor','middle')
+						.attr('x',function(d){
+							return hourLabelRadius*Math.sin(hourScale(d)*radians);
+						})
+						.attr('y',function(d){
+							return -hourLabelRadius*Math.cos(hourScale(d)*radians) + hourLabelYOffset;
+						})
+						.text(function(d){
+							return d;
+						});
+	
+	
+				var hands = face.append('g').attr('id','clock-hands');
+	
+				face.append('g').attr('id','face-overlay')
+					.append('circle').attr('class','hands-cover')
+						.attr('x',0)
+						.attr('y',0)
+						.attr('r',clockRadius/20);
+	
+				hands.selectAll('line')
+					.data(handData)
+						.enter()
+						.append('line')
+						.attr('class', function(d){
+							return d.type + '-hand';
+						})
+						.attr('x1',0)
+						.attr('y1',function(d){
+							return d.balance ? d.balance : 0;
+						})
+						.attr('x2',0)
+						.attr('y2',function(d){
+							return d.length;
+						})
+						.attr('transform',function(d){
+							return 'rotate('+ d.scale(d.value) +')';
+						});
+			}
+	
+			function moveHands(){
+				d3.select('#clock-hands').selectAll('line')
+				.data(handData)
+					.transition()
+					.attr('transform',function(d){
+						return 'rotate('+ d.scale(d.value) +')';
+					});
+			}
+	
+			function updateData(){
+				var t = new Date();
+				handData[0].value = (t.getHours() % 12) + t.getMinutes()/60 ;
+				handData[1].value = t.getMinutes();
+				handData[2].value = t.getSeconds();
+			}
+	
+			drawClock();
+	
+			setInterval(function(){
+				updateData();
+				moveHands();
+			}, 1000);
+	
+			d3.select(self.frameElement).style("height", height + "px");
+			</script>
+	
 </body>
 
 
@@ -94,4 +345,4 @@
 
 
 </footer>
-<html>
+</html>
