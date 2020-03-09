@@ -1,15 +1,41 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script lang="javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script lang="javascript" src="js/d3.v4.min.js"></script>
         <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap');
 
             body {
-            background: #fff;
+                background: #fff;
+                align-items: center;
+                justify-content: center;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+                margin: 0 auto;
             }
 
             svg{
                 stroke: #000;
                 font-family: "Quicksand", sans-serif;
+                align-items: center;
+                justify-content: center;
+                display: block;
+            }
+
+            img{
+                display: block;
+                margin: 0 auto;
             }
 
             #rim {
@@ -55,11 +81,22 @@
                 font-size: 24px;
             }
 
+            @media screen and (max-width: 800px) {
+                #container {
+                    visibility: hidden;
+                    clear: both;
+                    float: left;
+                    margin: 10px auto 5px 20px;
+                    width: 28%;
+                    display: none;
+                }
+            }
+
         </style>
     </head>
 
 <body>
-<div>
+<div id="container">
 
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script>
@@ -69,6 +106,8 @@
             margin = 200,
             width = (clockRadius+margin)*2,
             height = (clockRadius+margin)*2,
+            width = width,
+            height = height,
             hourHandLength = 2*clockRadius/3,
             minuteHandLength = clockRadius,
             secondHandLength = clockRadius-12,
@@ -115,7 +154,7 @@
 
         function drawClock(){
             updateData();
-            var svg = d3.select("body").append("svg")
+            var svg = d3.select("#container").append("svg")
                 .attr("width", width)
                 .attr("height", height);
 
