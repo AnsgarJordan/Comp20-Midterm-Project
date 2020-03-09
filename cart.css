@@ -37,7 +37,7 @@ body {
 
 .item {
   padding: 20px 30px;
-  height: 120px;
+  height: auto;
   display: flex;
   border-top:  1px solid #E1E8EE;
   border-bottom:  1px solid #E1E8EE;
@@ -150,8 +150,16 @@ input:focus {
 
 /* Total Price */
 .total-price {
-  width: 83px;
+  width: auto;
   padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+
+input[type="price"] {
+  width: 83px;
   text-align: center;
   font-size: 16px;
   color: #43484D;
@@ -169,6 +177,7 @@ input:focus {
     height: auto;
     flex-wrap: wrap;
     justify-content: center;
+    vertical-align: middle;
   }
   /* .image img {
     height: 50%;
@@ -184,4 +193,17 @@ input:focus {
   .buttons {
     margin-right: 20px;
   }
+}
+
+input[type="submit"] {
+  padding: 10px;
+  color: #FFF;
+  background-color: #5e5e5e;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 50%;
+  border: 2px solid #57113c;
+  margin-bottom: 10px;
 }
