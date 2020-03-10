@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="cart.css" media="screen" title="no title" charset="utf-8">
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <meta name="robots" content="noindex,follow" />
+	 <style type = "text/css">
+	  	input[type=price] {
+	  margins: auto;
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  box-sizing: border-box;
+	}
+	  </style>
   </head>
   <body>
     <nav>
@@ -97,15 +106,15 @@
           </tr>
           <tr>
             <td>Subtotal:</td> 
-            <td style="text-align: right;">$<input type="price"  name='subtotal' id="subtotal" /></td>
+            <td style="text-align: right;"><input type="price"  name='subtotal' id="subtotal" /></td>
           </tr>
           <tr>
             <td>Tax:</td>
-            <td style="text-align: right;">$ <input type="price"  name='tax' id="tax" /></td>
+            <td style="text-align: right;"> <input type="price"  name='tax' id="tax" /></td>
           </tr>
           <tr>
             <td>Total:</td>
-            <td style="text-align: right;">$ <input type="price"  name='total' id="total" /></td>
+            <td style="text-align: right;"> <input type="price"  name='total' id="total" /></td>
           </tr>
 
         </table>
@@ -174,9 +183,9 @@
         tax = (subtotal * 0.0625);
         total = subtotal + tax;
         document.getElementById("num_items").value = total_items;
-        document.getElementById("subtotal").value = subtotal.toFixed(2);
-        document.getElementById("tax").value = tax.toFixed(2);
-        document.getElementById("total").value = total.toFixed(2);
+        document.getElementById("subtotal").value = "$" + subtotal.toFixed(2);
+        document.getElementById("tax").value = "$" + tax.toFixed(2);
+        document.getElementById("total").value = "$" + total.toFixed(2);
     }
 
     function submit1() {
