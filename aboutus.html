@@ -27,11 +27,10 @@
 			background-color: white;
 			
 		}
-		img {
+		.image {
 			border-radius: 8px;
   			padding: 10px;
   			margin: auto;
-  			float: 
 		}
 		.container {
 		    overflow: auto;
@@ -50,24 +49,24 @@
 		</style>
 </head>
 
+<nav>
+	<ul>
+		<div class="nav-container">
+			<div class="floatleft">
+				<li><a href="index.html">Home</a></li>
+			</div>
+			<div class="floatright">
+				<li><a href="catalogue.html">Catalogue</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a class="active" href="aboutus.html">About Us</a></li>
+				<li><a href="terms.html">Terms</a></li>
+				<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
+			</div>
+		</div>
+	</ul>
+</nav>
 
 <body>
-	<nav>
-		<ul>
-			<div class="nav-container">
-				<div class="floatleft">
-					<li><a href="index.html">Home</a></li>
-				</div>
-				<div class="floatright">
-					<li><a href="catalogue.html">Catalogue</a></li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a class="active" href="aboutus.html">About Us</a></li>
-					<li><a href="terms.html">Terms</a></li>
-					<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
-				</div>
-			</div>
-		</ul>
-	</nav>
 
     <div class="textgroup" style="padding-top: 60px;">
 		<h3>About Us</h3>
@@ -85,24 +84,24 @@
 		business in their garage at home. From the first day, Bill and Bob 
 		followed a simple motto in designing their watches: simple, yet sleek. 
         </p>
-        <img src="garage.jpg" title="Bill and Bobs Garage Workshop, (1969)" style = "width: 90%; margin: auto;">
+        <img class="image" src="garage.jpg" title="Bill and Bobs Garage Workshop, (1969)" style = "width: 90%; margin: auto; display: block;">
     </div>
 
 
     <div>
 		<h3 style = "text-align: center"> Our Family</h3>
 		<div class = "left">
-				<img style = "padding: 10px, 0px" src="bald dude.jpg" width = "90%" alt=""/>
+				<img class="image" style = "padding: 10px, 0px" src="bald dude.jpg" width = "90%" alt=""/>
 	  <h3>John Johnson<br /></h3>
 	  <h4>CEO</h4>
 		</div>
 	  <div class = "middle"> 
-				<img style = "padding: 10px, 0px" src="bald dude 2.jpg" width = "90%" alt=""/>
+				<img class="image" style = "padding: 10px, 0px" src="bald dude 2.jpg" width = "90%" alt=""/>
 	  <h3>Jay Johnson <br /></h3>
 	  <h4>CTO</h4>	
 		</div>
 	  <div class = "right">
-				<img style = "padding: 10px" src="bald dude 3.jpg" width = "90%" alt=""/>
+				<img class="image" style = "padding: 10px" src="bald dude 3.jpg" width = "90%" alt=""/>
 	  <h3>Jimmy Johnson <br/> </h3>
 	  <h4> CFO</h4>	  
 		  </div>
