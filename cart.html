@@ -13,10 +13,10 @@
     <nav>
       <ul>
         <div class="nav-container">
-          <div class="float-left">
+          <div class="floatleft">
             <li><a href="index.html">Home</a></li>
           </div>
-          <div class="float-right">
+          <div class="floatright">
             <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="aboutus.html">About Us</a></li>
@@ -55,7 +55,7 @@
     </script>
 
     <div class="shopping-cart">
-      <form onsubmit="return validate()">
+      <form onsubmit="return submit1()">
       <!-- Title -->
       <div class="title">
         Shopping Cart
@@ -86,23 +86,26 @@
           s += "</div>";
           s += "<div class='total-price'>$" + watch_array[i].price + "</div>";
           s += "</div>";
-          console.log(s)
           document.writeln(s)
         }
       </script>
       <div style="display: flex; justify-content: center; align-items: center;">
         <table style="justify-content: center;">
           <tr>
+            <td>Number of items:</td> 
+            <td style="text-align: right;"><input type="price"  name='num_items' id="num_items" /></td>
+          </tr>
+          <tr>
             <td>Subtotal:</td> 
-            <td>$<input type="price"  name='subtotal' id="subtotal" /></td>
+            <td style="text-align: right;">$<input type="price"  name='subtotal' id="subtotal" /></td>
           </tr>
           <tr>
             <td>Tax:</td>
-            <td>$ <input type="price"  name='tax' id="tax" /></td>
+            <td style="text-align: right;">$ <input type="price"  name='tax' id="tax" /></td>
           </tr>
           <tr>
             <td>Total:</td>
-            <td>$ <input type="price"  name='total' id="total" /></td>
+            <td style="text-align: right;">$ <input type="price"  name='total' id="total" /></td>
           </tr>
 
         </table>
@@ -156,10 +159,12 @@
         document.getElementById("subtotal").value = "test";
 
         var num_items;
+        var total_items = 0;
         var subtotal = 0;
         for (i = 0; i < watch_array.length; i++) {
             num_items = document.getElementsByName("quan" + i)[0].value;
             if (parseInt(num_items) != 0) {
+                total_items += parseInt(num_items, 10);
                 item_cost = (parseInt(num_items) * watch_array[i].price).toFixed(2);
                 subtotal += parseFloat(item_cost);
             }
@@ -168,9 +173,31 @@
         /* update subtotal, tax, and total */
         tax = (subtotal * 0.0625);
         total = subtotal + tax;
+        document.getElementById("num_items").value = total_items;
         document.getElementById("subtotal").value = subtotal.toFixed(2);
         document.getElementById("tax").value = tax.toFixed(2);
         document.getElementById("total").value = total.toFixed(2);
+    }
+
+    function submit1() {
+      total_items = document.getElementById("num_items").value
+      var days;
+      if (total_items < 3)
+        days = 2;
+      else if (total_items < 6)
+        days = 5;
+      else
+        days = 12;
+      var d = new Date();
+      d.setDate(d.getDate()+days);
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      if (total_items != 0) {
+        alert("You ordered " + total_items + " item(s) for a total cost of $" + total.toFixed(2) + ".\n Your order will be ready for pickup on " + d.toLocaleDateString(undefined, options) + ".\n Thank you for shopping with us!");
+        return true;
+      }
+      else {
+        return false;
+      }
     }
     </script>
   </body>
