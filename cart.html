@@ -13,10 +13,10 @@
     <nav>
       <ul>
         <div class="nav-container">
-          <div class="floatleft">
+          <div class="float-left">
             <li><a href="index.html">Home</a></li>
           </div>
-          <div class="floatright">
+          <div class="float-right">
             <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="aboutus.html">About Us</a></li>
@@ -90,16 +90,25 @@
           document.writeln(s)
         }
       </script>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <table style="justify-content: center;">
+          <tr>
+            <td>Subtotal:</td> 
+            <td>$<input type="price"  name='subtotal' id="subtotal" /></td>
+          </tr>
+          <tr>
+            <td>Tax:</td>
+            <td>$ <input type="price"  name='tax' id="tax" /></td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td>$ <input type="price"  name='total' id="total" /></td>
+          </tr>
+
+        </table>
+      </div>
       <input type = "submit" value = "Submit Order" style="position:relative; left:25%;"/>
     </form>
-    <p>Subtotal: 
-      $<input type="text"  name='subtotal' id="subtotal" />
-    </p>
-    <p>Mass tax (6.25%):
-      $ <input type="text"  name='tax' id="tax" />
-    </p>
-    <p>Total: $ <input type="text"  name='total' id="total" />
-    </p>
     </div>
 
 
@@ -119,6 +128,7 @@
     		}
 
         $input.val(value);
+        validate();
 
     	});
 
@@ -134,20 +144,22 @@
     			value =100;
     		}
 
-    		$input.val(value);
-    	});
+        $input.val(value);
+        validate();
+      });
 
       $('.like-btn').on('click', function() {
         $(this).toggleClass('is-active');
       });
 
       function validate() {
+        document.getElementById("subtotal").value = "test";
+
         var num_items;
         var subtotal = 0;
         for (i = 0; i < watch_array.length; i++) {
             num_items = document.getElementsByName("quan" + i)[0].value;
             if (parseInt(num_items) != 0) {
-                alert("entered");
                 item_cost = (parseInt(num_items) * watch_array[i].price).toFixed(2);
                 subtotal += parseFloat(item_cost);
             }
@@ -156,9 +168,9 @@
         /* update subtotal, tax, and total */
         tax = (subtotal * 0.0625);
         total = subtotal + tax;
-        alert("Subtotal" +  subtotal.toFixed(2));
-        alert("Tax" +  tax.toFixed(2));
-        alert("Total" +  total.toFixed(2));
+        document.getElementById("subtotal").value = subtotal.toFixed(2);
+        document.getElementById("tax").value = tax.toFixed(2);
+        document.getElementById("total").value = total.toFixed(2);
     }
     </script>
   </body>
