@@ -73,7 +73,46 @@
 		.hour-label{
 			font-size: 24px;
 		}
+		.top-image-container {
+			  position: relative;
+			  text-align: center;
+			  color: white;
+			  margin: auto;
+		}
+		.image-text{
+			  position: absolute;
+			  top: 50%;
+			  left: 25%;
+			  transform: translate(-50%, -50%);
 
+		}
+		.myButton {
+		position: absolute;
+		left: 30%;
+		background-color:#0000b8;
+		border-radius:5px;
+		border:3px solid #ffffff;
+		cursor:pointer;
+		color:#ffffff;
+		font-size:3vh;
+		padding:10px 21px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #6db362;
+		
+	}
+	.myButton:hover {
+		background-color:#5054a3;
+	}
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+	.Johnsons{
+		font-size: 6vh;
+	}
+	.Simplest{
+		font-size: 5vh;
+	}
 		@media screen and (max-width: 800px) {
 			#container {
 				visibility: hidden;
@@ -83,8 +122,22 @@
 				width: 28%;
 				display: none;
 			}
+			.i
 		}
-
+		@media screen and (max-width: 900px) {
+			.Johnsons{
+				font-size: 4vh
+			}
+			.Simplest{
+				font-size: 3vh
+			}
+			.myButton{
+				font-size: 2vh
+			}
+		}
+	.left, .right {display: inline-block; *display: inline; vertical-align: top; font-size: 12px; text-align: center; padding = 10px; margin = 10px}
+    	.left {width: 40%; background-color: #f1f1f1; margin: 3%; border-radius: 5px;}
+    	.right {width: 25%; background-color: #f1f1f1;margin: 3%;border-radius: 5px;}
 	</style>
 </head>
 
@@ -105,14 +158,18 @@
 			</div>
 		</ul>
 	</nav>
-
-	<div class="hero">
-		<div class="textgroup">
-			<h1>Johnson's Watches<sup>TM</sup></h1>
-			<h2>Simple and Sleek</h2>
+	
+	
+	<div class="top-image-container">
+		<img src="home page.png" style = "width: 100%">
+		<div class = "image-text">
+			<p class = "Johnsons"><strong>Johnson's Watches</strong></p>
+			<p class = "Simplest"><strong>The Simplest and Sleekest</strong></p>
+			<a href="catalogue.html" class="myButton" style = "margin:auto">Shop Now</a>
 		</div>
 	</div>
-	<div id="container"></div>
+	<h3 style = "text-align: center; margin-top: 40px;"> Who We Are</h3>
+	<p><div id="container" style: "float: left"></div>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 		<script>
 	
@@ -277,6 +334,14 @@
 	
 			d3.select(self.frameElement).style("height", height + "px");
 			</script>
+	
+	<p style = "text-align: center; font-size: 4vh"><strong>All our watches have the best possible time keeping capabilities</strong></p>
+	</p>
+	<p style = "text-align: center"> We build watches that are sleek, stylish, and sexy.</p>
+	
+	<p style = "text-align: center"> With our watches, you will be the hottest commodity at any social or business function.</p>
+	
+	<p style = "text-align: center"> Since 1967, Johnson's has done it best.</p>
 	
 </body>
 
