@@ -94,7 +94,26 @@ input[type=submit], input[type = reset] :hover {
 
 	<script language="javascript">
 		function validate() {
-			alert("Thank you for your message!");
+			var isValid = true;
+			var name = document.getElementsByName('name')[0];
+			var email = document.getElementsByName('email')[0];
+			var phone = document.getElementsByName('phone')[0];
+			if (name.value == "") {
+				name.focus();
+				return false;
+			}
+			if (phone.value == "") {
+				phone.focus();
+				return false;
+			}
+			if (email.value == "") {
+				email.focus();
+				return false;
+			}
+			if (isValid)
+				alert("Thank you for your message!");
+
+			return isValid;
 		}
 	</script>
 	
@@ -104,13 +123,16 @@ input[type=submit], input[type = reset] :hover {
 	
 	<div class = "container">
 		<!-- <h4 style = "text-align: center">Please fill out this contact form with information:</h4> -->
-        <form method="get" action="" onclick="validate()">
+        <form onsubmit="return validate()">
 			Name <input type="text" name="name" /><br />
-			Phone Number <input type="text" name="name" /><br />
-			Email <input type="text" name="name" /><br />
+			Phone Number <input type="text" name="phone" /><br />
+			Email <input type="text" name="email" /><br />
 			<br /> What would you like to tell us? <textarea rows="6"></textarea> <br />
-			<input type="reset" value="Clear" />
-			<input type="submit" value="Submit"/>	
+			<div style="text-align: center; align-items: center;">
+				<input type="submit" value="Submit"/>	
+				<input type="reset" value="Clear" />
+			</div>
+
 		</form>
 	</div>
 	<div class = "content" style="text-align: center;">
