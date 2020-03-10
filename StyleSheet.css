@@ -5,10 +5,17 @@
  *	Date: 3/10/2020
  */
 
+
+ @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand|Raleway&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Assistant|Bellota+Text&display=swap');
+
  * {
- 	font-family: Helvetica;
+ 	font-family: 'Assistant', sans-serif;
  }
 
+ body {
+	 margin: 0;
+ }
 
  .container {
     border-radius: 5px;
@@ -144,27 +151,31 @@ footer {
 	width: 100vw;
 
 }
-/*
- h1 {
- 	text-align:center;
- 	color: white;
- 	background-color: rgba(51, 0, 0, 0.5);
- 	border: 5px solid;
 
- }
+.Awards{
+	background-color: transparent;
+	color:white;
+	font-family: 'Assistant', sans-serif;
+	float:left;
+	color:lightgray;
+}
+.Social-Media {
+	background-color: transparent;
+	color:white;
+	font-family: 'Assistant', sans-serif;
+	float:right;
+	padding-right:80px;
+	text-align: center;
+}
+.Terms {
+	float:center;
+	text-decoration: underline;
+	color:lightgray;
+	font-family: 'Assistant', sans-serif;
+	font-size:large;
+	text-align:center;
+}
 
- h2 {
- 	text-align: center;
- 	color: white;
- 	background-color: rgba(51, 0, 0, 0.5);
- 	border: 2px solid white;
- }
-
- p {
- 	text-align:left;
- 	color: black;
- 	font-size: x-large;
- 	border: 2px solid white;
- 	margin-left: 450px;
- 	margin-right: 450px;
- }*/
+footer{
+	overflow: hidden;
+}

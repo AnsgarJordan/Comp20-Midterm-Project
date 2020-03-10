@@ -8,10 +8,9 @@ html,
 body {
   width: 100%;
   height: 100%;
-  padding: 10px;
   margin: 0;
   background-color: #065A82;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Assitant', sans-serif;
 }
 
 img.watch {
@@ -189,18 +188,13 @@ input[type="price"] {
     justify-content: center;
     vertical-align: middle;
   }
-  /* .image img {
-    height: 50%;
-  }
-  .image, */
+
+  .image,
   .quantity,
   .description {
     width: 100%;
     text-align: center;
-    margin: 6px 0;
-  }
-  .buttons {
-    margin-right: 20px;
+    margin: 6px 50px 6px 0px;
   }
 }
 
